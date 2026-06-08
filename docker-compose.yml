@@ -1,0 +1,64 @@
+services:
+  local_dev_atlas:
+    image: mongodb/mongodb-atlas-local:8.0
+    hostname: local_dev_atlas
+    ports:
+      - 27017:27017
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=philoagents
+      - MONGODB_INITDB_ROOT_PASSWORD=philoagents
+    volumes:
+      - data:/data/db
+      - config:/data/configdb
+    networks:
+      - philoagents-network
+  api:
+    container_name: philoagents-api
+    image: philoagents-course-api:latest
+    build:
+      context: ./philoagents-api
+      dockerfile: Dockerfile
+    environment:
+      - MONGO_URI=mongodb://philoagents:philoagents@local_dev_atlas:27017/?directConnection=true
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./philoagents-api/.env
+    volumes:
+      - ./philoagents-api/workspace:/app/workspace
+      - ./philoagents-api/data:/app/data
+    networks:
+      - philoagents-network
+  ui:
+    container_name: philoagents-ui
+    build:
+      context: ./philoagents-ui
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./philoagents-ui:/app
+      - /app/node_modules
+    depends_on:
+      - api
+    networks:
+      - philoagents-network
+  evidently-ui:
+    container_name: philoagents-evidently
+    image: philoagents-course-api:latest
+    working_dir: /app
+    command: ["/app/.venv/bin/evidently", "ui", "--workspace", "/app/workspace", "--host", "0.0.0.0", "--port", "8085"]
+    ports:
+      - "8085:8085"
+    volumes:
+      - ./philoagents-api/workspace:/app/workspace
+    networks:
+      - philoagents-network
+
+volumes:
+  data:
+  config:
+
+networks:
+  philoagents-network:
+    name: philoagents-network
