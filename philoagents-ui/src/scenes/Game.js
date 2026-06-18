@@ -61,51 +61,30 @@ export class Game extends Scene {
 
     createPhilosophers(map, layers) {
         const philosopherConfigs = [
-            { id: "socrates", name: "Socrates", defaultDirection: "right", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "aristotle", name: "Aristotle", defaultDirection: "right", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "plato", name: "Plato", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "descartes", name: "Descartes", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "leibniz", name: "Leibniz", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "ada_lovelace", name: "Ada Lovelace", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "turing", name: "Turing", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "searle", name: "Searle", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "chomsky", name: "Chomsky", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "dennett", name: "Dennett", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "krishna", name: "Krishna", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "buddha", name: "Gautama Buddha", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
-            { id: "chanakya", name: "Chanakya", defaultDirection: "front", roamRadius: 5000, roamType: "free", collision: false },
             {
-                id: "miguel",
-                name: "Miguel",
+                id: "jnj",
+                name: "J&J Assistant",
+                atlas: "socrates",
                 defaultDirection: "front",
                 roamRadius: 5000,
-                defaultMessage: "Hey there! I'm Miguel, but you can call me Mr Agent. I'd love to chat, but I'm currently writing my Substack article for tomorrow. If you're curious about my work, take a look at The Neural Maze!"
-            },
-            {
-                id: "paul",
-                name: "Paul",
-                defaultDirection: "front",
-                roamRadius: 5000,
-                defaultMessage: "Hey, I'm busy teaching my cat AI with my latest course. I can't talk right now. Check out Decoding ML for more on my thoughts."
+                roamType: "free",
+                collision: false
             }
         ];
 
         this.philosophers = [];
 
         philosopherConfigs.forEach(config => {
-            let spawnPoint = map.findObject("Objects", (obj) => obj.name === config.name);
+            let spawnPoint = map.findObject("Objects", (obj) => obj.name === "Socrates");
             if (!spawnPoint) {
-                // Safely position them relative to Socrates
-                const socratesSpawn = map.findObject("Objects", (obj) => obj.name === "Socrates");
-                const offsetMultiplier = config.id === "krishna" ? 1 : (config.id === "buddha" ? 2 : 3);
-                spawnPoint = socratesSpawn ? { x: socratesSpawn.x + (60 * offsetMultiplier), y: socratesSpawn.y } : { x: 400 + (60 * offsetMultiplier), y: 400 };
+                spawnPoint = { x: 400, y: 400 };
             }
 
             this[config.id] = new Character(this, {
                 id: config.id,
                 name: config.name,
                 spawnPoint: spawnPoint,
-                atlas: config.id,
+                atlas: config.atlas || config.id,
                 defaultDirection: config.defaultDirection,
                 worldLayer: layers.worldLayer,
                 defaultMessage: config.defaultMessage,

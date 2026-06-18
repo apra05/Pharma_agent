@@ -3,7 +3,7 @@ from loguru import logger
 from pymongo import MongoClient
 from pymongo.database import Database
 
-from philoagents.config import settings
+from pharma_agent.config import settings
 
 
 @click.command()

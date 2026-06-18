@@ -2,9 +2,9 @@ from pathlib import Path
 
 import click
 
-from philoagents.application import LongTermMemoryCreator
-from philoagents.config import settings
-from philoagents.domain.philosopher import PhilosopherExtract
+from pharma_agent.application import LongTermMemoryCreator
+from pharma_agent.config import settings
+from pharma_agent.domain.philosopher import PhilosopherExtract
 
 
 @click.command()

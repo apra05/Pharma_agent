@@ -2,8 +2,8 @@ from pathlib import Path
 
 import click
 
-from philoagents.application.evaluation import evaluate_agent_evidently
-from philoagents.config import settings
+from pharma_agent.application.evaluation import evaluate_agent_evidently
+from pharma_agent.config import settings
 
 
 @click.command()

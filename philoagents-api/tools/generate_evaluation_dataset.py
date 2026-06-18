@@ -3,9 +3,9 @@ from pathlib import Path
 import click
 from loguru import logger
 
-from philoagents.application.evaluation import EvaluationDatasetGenerator
-from philoagents.config import settings
-from philoagents.domain.philosopher import PhilosopherExtract
+from pharma_agent.application.evaluation import EvaluationDatasetGenerator
+from pharma_agent.config import settings
+from pharma_agent.domain.philosopher import PhilosopherExtract
 
 
 @click.command()

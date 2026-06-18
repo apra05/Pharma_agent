@@ -11,7 +11,7 @@ COPY uv.lock pyproject.toml README.md ./
 RUN uv sync --frozen --no-cache
 
 # Copy the application into the container.
-COPY src/philoagents philoagents/
+COPY src/pharma_agent pharma_agent/
 COPY tools tools/
 
-CMD ["/app/.venv/bin/fastapi", "run", "philoagents/infrastructure/api.py", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["/app/.venv/bin/fastapi", "run", "pharma_agent/infrastructure/api.py", "--port", "8000", "--host", "0.0.0.0"]

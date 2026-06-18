@@ -2,13 +2,13 @@ from pathlib import Path
 
 import click
 
-from philoagents.application.evaluation import evaluate_agent, upload_dataset
-from philoagents.config import settings
+from pharma_agent.application.evaluation import evaluate_agent, upload_dataset
+from pharma_agent.config import settings
 
 
 @click.command()
 @click.option(
-    "--name", default="philoagents_evaluation_dataset", help="Name of the dataset"
+    "--name", default="pharma_agent_evaluation_dataset", help="Name of the dataset"
 )
 @click.option(
     "--data-path",

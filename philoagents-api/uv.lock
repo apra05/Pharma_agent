@@ -2157,7 +2157,7 @@ wheels = [
 ]
 
 [[package]]
-name = "philoagents"
+name = "pharma-agent"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

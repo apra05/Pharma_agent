@@ -3,10 +3,10 @@ from functools import wraps
 
 import click
 
-from philoagents.application.conversation_service.generate_response import (
+from pharma_agent.application.conversation_service.generate_response import (
     get_streaming_response,
 )
-from philoagents.domain.philosopher_factory import PhilosopherFactory
+from pharma_agent.domain.philosopher_factory import PhilosopherFactory
 
 
 def async_command(f):

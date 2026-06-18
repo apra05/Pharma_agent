@@ -74,6 +74,7 @@ class WebSocketApiService {
     
     if (data.error) {
       console.error('WebSocket error:', data.error);
+      this.triggerCallback('message', `Error: ${data.error}`);
       this.handleStreamingUpdate(false);
       return;
     }

@@ -1,71 +1,8 @@
 [
     {
-        "id": "plato",
+        "id": "jnj",
         "urls": [
-            "https://plato.stanford.edu/entries/plato/"
-        ]
-    },
-    {
-        "id": "aristotle",
-        "urls": [
-            "https://plato.stanford.edu/entries/aristotle/"
-        ]
-    },
-    {
-        "id": "socrates",
-        "urls": [
-            "https://plato.stanford.edu/entries/socrates/"
-        ]
-    },
-    {
-        "id": "descartes",
-        "urls": [
-            "https://plato.stanford.edu/entries/descartes/"
-        ]
-    },
-    {
-        "id": "leibniz",
-        "urls": [
-            "https://plato.stanford.edu/entries/leibniz/"
-        ]
-    },
-    {
-        "id": "ada_lovelace",
-        "urls": []
-    },
-    {
-        "id": "turing",
-        "urls": [
-            "https://plato.stanford.edu/entries/turing/"
-        ]
-    },
-    {
-        "id": "searle",
-        "urls": []
-    },
-    {
-        "id": "chomsky",
-        "urls": []
-    },
-    {
-        "id": "krishna",
-        "urls": [
-            "https://plato.stanford.edu/entries/ethics-indian/",
-            "https://en.wikipedia.org/wiki/Bhagavad_Gita",
-            "https://en.wikipedia.org/wiki/Krishna"
-        ]
-    },
-    {
-        "id": "buddha",
-        "urls": [
-            "https://plato.stanford.edu/entries/buddha/"
-        ]
-    },
-    {
-        "id": "chanakya",
-        "urls": [
-            "https://en.wikipedia.org/wiki/Chanakya",
-            "https://en.wikipedia.org/wiki/Arthashastra"
+            "https://www.jnj.com/"
         ]
     }
 ]

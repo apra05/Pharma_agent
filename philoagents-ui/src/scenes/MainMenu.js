@@ -21,7 +21,7 @@ export class MainMenu extends Scene {
             this.showInstructions();
         });
 
-        this.createButton(centerX, startY + buttonSpacing * 2, 'Support Philoagents', () => {
+        this.createButton(centerX, startY + buttonSpacing * 2, 'Support Pharma Agent', () => {
             window.open('https://github.com/neural-maze/philoagents-course', '_blank');
         });
     }
