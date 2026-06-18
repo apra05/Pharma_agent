@@ -63,9 +63,9 @@ cd Pharma_agent
 
 ## 2. Install Python Dependencies
 
-Navigate to the `philoagents-api` folder and use `uv` to build the virtual environment:
+Navigate to the `pharmagent-api` folder and use `uv` to build the virtual environment:
 ```bash
-cd philoagents-api
+cd pharmagent-api
 uv venv .venv
 # Activate the environment:
 # On Windows:
@@ -96,7 +96,7 @@ Open `.env` and fill in `GROQ_API_KEY` (and `COMET_API_KEY` / `OPENAI_API_KEY` i
 # 📁 Project Structure
 
 ```bash
-philoagents-api/
+pharmagent-api/
     ├── data/                  # Ingestion dataset (jnj_content.txt) and evaluation samples
     ├── src/pharma_agent/      # Core package containing application logic
     │   ├── application/       # Ingestion, response generation, and evaluation layers
@@ -141,7 +141,7 @@ Populate the database with the J&J site content:
 ```bash
 make create-long-term-memory
 ```
-This loads data from `philoagents-api/data/jnj_content.txt` into the local MongoDB instance under the `pharma_agent` database.
+This loads data from `pharmagent-api/data/jnj_content.txt` into the local MongoDB instance under the `pharma_agent` database.
 
 ### 2. Launch the UI
 Access the 2D visual town game in your browser:

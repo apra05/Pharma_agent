@@ -16,28 +16,28 @@ services:
     container_name: pharma-agent-api
     image: pharma-agent-course-api:latest
     build:
-      context: ./philoagents-api
+      context: ./pharmagent-api
       dockerfile: Dockerfile
     environment:
       - MONGO_URI=mongodb://pharma_agent:pharma_agent@local_dev_atlas:27017/?directConnection=true
     ports:
       - "8000:8000"
     env_file:
-      - ./philoagents-api/.env
+      - ./pharmagent-api/.env
     volumes:
-      - ./philoagents-api/workspace:/app/workspace
-      - ./philoagents-api/data:/app/data
+      - ./pharmagent-api/workspace:/app/workspace
+      - ./pharmagent-api/data:/app/data
     networks:
       - pharma-agent-network
   ui:
     container_name: pharma-agent-ui
     build:
-      context: ./philoagents-ui
+      context: ./pharmagent-ui
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     volumes:
-      - ./philoagents-ui:/app
+      - ./pharmagent-ui:/app
       - /app/node_modules
     depends_on:
       - api
@@ -51,7 +51,7 @@ services:
     ports:
       - "8085:8085"
     volumes:
-      - ./philoagents-api/workspace:/app/workspace
+      - ./pharmagent-api/workspace:/app/workspace
     networks:
       - pharma-agent-network
 

@@ -1,6 +1,6 @@
 <div align="center">
   <h1>💊 Pharma Agent</h1>
-  <h3>An AI-powered 2D game simulation and RAG agent for Johnson & Johnson corporate information.</h3>
+  <h3>An AI-powered 2D simulation and RAG agent for Johnson & Johnson corporate information.</h3>
   <p class="tagline">Interactive conversational AI powered by <b>LangGraph</b>, <b>MongoDB</b>, <b>Groq</b>, and <b>Phaser 3</b>.</p>
 </div>
 
@@ -12,13 +12,13 @@
 
 ## 📖 About This Project
 
-Welcome to **Pharma Agent**! This repository hosts an interactive 2D simulation game and an AI agent backend designed to provide information about Johnson & Johnson's corporate operations, division details (Innovative Medicine and MedTech), and "Our Credo" values.
+Welcome to **Pharma Agent**! This repository hosts an interactive 2D simulation and an AI agent backend designed to provide information about Johnson & Johnson's corporate operations, division details (Innovative Medicine and MedTech), and "Our Credo" values.
 
 Instead of browsing static text files, users can explore a visual 2D town environment and converse directly with a J&J corporate agent. The agent is backed by a Retrieval-Augmented Generation (RAG) system containing crawled website content, enabling accurate and context-aware responses.
 
 ### 🎮 Features
 
-- **Interactive 2D Town UI**: A Phaser 3-powered game interface where you can control a character to walk around and interact with the corporate agent.
+- **Interactive 2D Town UI**: A Phaser 3-powered interface where you can control a character to walk around and interact with the corporate agent.
 - **RAG-Powered Conversations**: The agent utilizes local vector embeddings and J&J website knowledge to answer questions accurately.
 - **Short & Long-Term Memory**: Implemented using MongoDB, ensuring that the agent maintains memory of previous user interactions and preferences.
 - **Real-Time Communication**: Seamless real-time dialogue streaming via WebSockets.
@@ -44,19 +44,19 @@ The codebase is split into two main packages:
 
 ```bash
 .
-├── philoagents-api/     # Backend API and RAG pipeline (Python)
-└── philoagents-ui/      # Phaser 3-based 2D game interface (Node.js)
+├── pharmagent-api/     # Backend API and RAG pipeline (Python)
+└── pharmagent-ui/      # Phaser 3-based 2D interface (Node.js)
 ```
 
-- **[philoagents-api](file:///d:/philoagents_live/philoagents-api)**: Built using Python 3.11, FastAPI, LangGraph, and MongoDB. Handles text ingestion, vector indexing, query routing, memory storage, and agent execution.
-- **[philoagents-ui](file:///d:/philoagents_live/philoagents-ui)**: Built with Phaser 3, Webpack, and TailwindCSS. Runs on Node.js and provides a 2D RPG interface.
+- **[pharmagent-api](file:///d:/philoagents_live/pharmagent-api)**: Built using Python 3.11, FastAPI, LangGraph, and MongoDB. Handles text ingestion, vector indexing, query routing, memory storage, and agent execution.
+- **[pharmagent-ui](file:///d:/philoagents_live/pharmagent-ui)**: Built with Phaser 3, Webpack, and TailwindCSS. Runs on Node.js and provides a 2D RPG interface.
 
 ---
 
 ## 👔 Dataset & Knowledge Base
 
 The agent's knowledge is sourced directly from the Johnson & Johnson corporate website.
-The core data is ingested from [philoagents-api/data/jnj_content.txt](file:///d:/philoagents_live/philoagents-api/data/jnj_content.txt), which includes:
+The core data is ingested from [pharmagent-api/data/jnj_content.txt](file:///d:/philoagents_live/pharmagent-api/data/jnj_content.txt), which includes:
 - J&J Our Credo values
 - Innovative Medicine division information
 - MedTech division overview
