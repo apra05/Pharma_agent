@@ -16,14 +16,14 @@ infrastructure-stop:
 	docker compose stop
 
 check-docker-image:
-	@python3 -c "import subprocess, sys; (subprocess.run(['docker', 'image', 'inspect', 'pharma-agent-course-api'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0) or (print('Error: pharma-agent-course-api Docker image not found.\nPlease run make infrastructure-build first to build the required images.') or sys.exit(1))"
+	@python -c "import subprocess, sys; (subprocess.run(['docker', 'image', 'inspect', 'pharma-agent-course-api'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0) or (print('Error: pharma-agent-course-api Docker image not found.\nPlease run make infrastructure-build first to build the required images.') or sys.exit(1))"
 
 # --- Offline Pipelines ---
 
 MONGO_DOCKER_URI = mongodb://pharma_agent:pharma_agent@local_dev_atlas:27017/?directConnection=true
 
 call-agent: check-docker-image
-	docker run --rm --network=pharma-agent-network --env-file philoagents-api/.env -e MONGO_URI=$(MONGO_DOCKER_URI) -v ./philoagents-api/data:/app/data pharma-agent-course-api uv run python -m tools.call_agent --philosopher-id "turing" --query "How can we know the difference between a human and a machine?"
+	docker run --rm --network=pharma-agent-network --env-file philoagents-api/.env -e MONGO_URI=$(MONGO_DOCKER_URI) -v ./philoagents-api/data:/app/data pharma-agent-course-api uv run python -m tools.call_agent --philosopher-id "jnj" --query "What is the core message of Our Credo?"
 
 create-long-term-memory: check-docker-image
 	docker run --rm --network=pharma-agent-network --env-file philoagents-api/.env -e MONGO_URI=$(MONGO_DOCKER_URI) -v ./philoagents-api/data:/app/data pharma-agent-course-api uv run python -m tools.create_long_term_memory

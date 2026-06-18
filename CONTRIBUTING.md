@@ -1,57 +1,44 @@
-# Contributing to the PhiloAgents Course
+# Contributing to Pharma Agent
 
-Welcome to one of the most comprehensive open-source courses on Agents 👋
+Welcome to the **Pharma Agent** repository! We deeply appreciate your contributions to help improve this open-source project.
 
-We deeply appreciate your support for the AI community and future readers 🤗
+---
 
-## Ways to Contribute
+## 🛠️ Ways to Contribute
 
-The course itself is already a comprehensive end-to-end resource.
+There are several ways you can contribute to the development and accuracy of the Pharma Agent:
 
-But as a community project, we weren't able to test the code on all possible scenarios. 
+- **Fixing Typos or Formatting**: Simple grammar, spelling, or documentation enhancements.
+- **Updating Dependencies**: Keeping versions of Python libraries, Node packages, or Docker files up-to-date.
+- **Bug Fixes**: Resolving issues with backend endpoints, frontend Phaser UI, or the ingestion pipeline.
+- **Improving Knowledge Accuracy**: Suggestions or edits to the J&J content corpus in `jnj_content.txt`.
+- **Operating System Support**: Adding guides or fixes for running on different operating systems (Windows/macOS/Linux).
 
-Thus, if you find any bugs or improvements, consider supporting future readers by contributing to this course.
+---
 
-A contribution can be:
-- Fixing typos
-- Updating version numbers
-- Fixing fundamental issues, such as Python modules that don't work anymore
-- Clarification in documentation
-- Support for different operating systems (e.g., Windows)
+## 🐛 Reporting Issues
 
-Remember, no contribution is too small. Every improvement helps make this repository an even better resource for the community.
+If you find a bug, have a question, or would like to request a new feature:
+1. Search the existing issues to see if it has already been reported.
+2. Open a new issue with a clear description, reproduction steps, and screenshots if applicable.
 
-## Reporting Issues
+---
 
-Found a problem or have a suggestion? Please create an issue on GitHub, providing as much detail as possible.
+## 📬 Submitting Changes
 
-## Contributing Code or Content
+1. **Fork the Repository**: Create a fork of the codebase under your own GitHub account.
+2. **Create a Branch**: Create a descriptive branch name from `main` (e.g., `feature/improve-rag-retrieval` or `bugfix/fix-websocket-cors`).
+3. **Make and Test Your Changes**: Run local verification tests to ensure nothing is broken.
+4. **Follow Formatting Rules**: Run formatter/linter commands to ensure clean code standards:
+   - For Backend: `make format-fix` and `make lint-fix`
+5. **Commit & Push**: Write clear and descriptive commit messages, push your branch to your fork.
+6. **Open a Pull Request**: Submit a Pull Request to the main branch of `apra05/Pharma_agent`. Provide a detailed summary of what was changed and why.
 
-1. **Fork & Branch:** Fork the repo and create a branch from `main`.
-2. **Make Changes:** Implement your contribution.
-3. **Test:** Verify your changes work properly.
-4. **Follow Style:** Match existing code and documentation conventions.
-5. **Commit:** Write clear, concise commit messages.
-6. **Stay Updated:** Ensure your code is updated with the main branch before submitting.
-7. **Submit PR:** Push to your fork and open a pull request.
-8. **Review Process:** Wait for maintainer review.
-9. **Merge:** Approved changes will be merged to main.
+---
 
-📍 [Official Guide on creating a pull request from a forked GitHub repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) or use an LLM for more detailed instructions.
+## 📐 Code Quality Guidelines
 
-Congratulations! You're now a contributor to the PhiloAgents open-source course. 🔥 
-
-## Code Quality and Readability
-
-For high-quality, readable code:
-- Write clean, well-structured code
-- Add helpful comments for complex logic
-- Use consistent formatting
-- Use consistent documentation style
-- Consider using a language model to improve readability
-
-## Final Notes
-
-We're grateful for all contributors. Your work helps future readers and the AI community.
-
-Let's make the AI community better together! 🤘
+To maintain code readability and reliability:
+- Keep code clean, modular, and well-documented.
+- Write docstrings and comments for complex logic.
+- Ensure that modifications to agent behavior do not disrupt the core J&J corporate identity guidelines defined in `philosopher_factory.py`.
